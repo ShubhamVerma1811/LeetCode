@@ -41,7 +41,8 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var reverseList = function (head) {
+// Iterative Approach
+var reverseListIte = function (head) {
   let prev = null;
   let next = null;
   let curr = head;
@@ -53,5 +54,17 @@ var reverseList = function (head) {
   }
   head = prev;
   return head;
+};
+
+// Recursive Approach
+const reverseList = (head) => {
+  if (!head || !head.next) return head;
+
+  const reversedHead = reverseList(head.next);
+
+  head.next.next = head;
+  head.next = null;
+  console.log(reversedHead)
+  return reversedHead;
 };
 // @lc code=end

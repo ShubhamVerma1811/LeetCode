@@ -4,4 +4,4 @@
 
 ## Here's my Leetcode Profile : [Shubham Verma](https://leetcode.com/shubhamverma18/)
 
-The problem descriptions in the code files are present because of LeetCode Cli
+The problem descriptions in the code files are present because of LeetCode CLI

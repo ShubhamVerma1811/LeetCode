@@ -67,4 +67,33 @@ var isPalindrome = function (head) {
   }
   return isPalin;
 };
+
+// Two Pointer Approach
+const isPalindrome = (head) => {
+  let slow = head;
+  let fast = head;
+  while (fast && fast.next) {
+    fast = fast.next.next;
+    slow = slow.next;
+  }
+
+  fast = head;
+  slow = reverse(slow);
+  while (slow) {
+    if (slow.val !== fast.val) return false;
+    slow = slow.next;
+    fast = fast.next;
+  }
+
+  return true;
+};
+
+const reverse = (head) => {
+  if (!head || !head.next) return head;
+  const revHead = reverse(head.next);
+
+  head.next.next = head;
+  head.next = null;
+  return revHead;
+};
 // @lc code=end
